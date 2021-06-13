@@ -27,7 +27,7 @@ public class DBConnection implements Serializable {
     public static Connection makeConnection() {
         Connection con = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             
             String connString = System.getenv("SQLSERVERCONNSTR_AWS_DB");
             con=DriverManager.getConnection(connString);
