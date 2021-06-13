@@ -29,7 +29,8 @@ public class DBConnection implements Serializable {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             
-            String connString = System.getenv("SQLSERVERCONNSTR_AWS_DB");
+            String connString = System.getenv("SQLSERVERCONNSTR_AwsDb");
+//            String connString = "jdbc:sqlserver://indoor-positioning.cm4zyhsrdgxp.ap-southeast-1.rds.amazonaws.com:1433;databaseName=AssignmentPRJ321SE140609;username=admin;password=TheHien2407abcX123";
             con=DriverManager.getConnection(connString);
             
         } catch (Exception e) {
