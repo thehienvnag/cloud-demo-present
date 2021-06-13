@@ -18,8 +18,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    publishJUnitResults: false
     goals: 'package'
 - task: AzureRmWebAppDeployment@4
   inputs:
@@ -30,4 +29,4 @@ steps:
     deployToSlotOrASE: true
     ResourceGroupName: 'Cloud_Demo'
     SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
